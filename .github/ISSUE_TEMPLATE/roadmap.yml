@@ -1,0 +1,34 @@
+name: Open-source project
+description: Add a project to the lab roadmap / 添加开源计划
+title: '[Roadmap] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe one project here. A maintainer adds the `roadmap` label to publish it on the profile.
+        每个 Issue 对应一个项目，由维护者添加 roadmap 标签后展示在首页。
+  - type: input
+    id: focus
+    attributes:
+      label: Technical focus
+      description: Shown below the project title / 显示在项目名称下方
+      placeholder: Multi-agent systems · AI Tools
+    validations:
+      required: true
+  - type: input
+    id: project-link
+    attributes:
+      label: Project link
+      description: Optional HTTPS project URL; leave empty to link to this Issue / 留空则跳转本 Issue
+      placeholder: https://github.com/owner/project
+  - type: textarea
+    id: plan
+    attributes:
+      label: Plan
+      description: What will you build and release? / 准备做什么，何时算完成？
+      placeholder: |
+        - [ ] Build a first version
+        - [ ] Write the docs
+        - [ ] Publish the source
+    validations:
+      required: true

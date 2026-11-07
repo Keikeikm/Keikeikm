@@ -1,0 +1,59 @@
+name: Update open source roadmap
+
+on:
+  issues:
+    types: [opened, edited, closed, reopened, labeled, unlabeled, deleted, transferred]
+  label:
+    types: [edited, deleted]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 2 * * *'
+  push:
+    paths:
+      - 'roadmap/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'README.md'
+      - '.github/workflows/roadmap.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-roadmap
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.event_name != 'push' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      issues: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test
+      - name: Sync Issues and render README
+        run: npm run sync
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Commit changed roadmap
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git add README.md assets/roadmap roadmap/issues.json
+          if git diff --cached --quiet; then
+            echo "Roadmap is already up to date."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "docs: sync open source roadmap"
+          git push origin "HEAD:$DEFAULT_BRANCH"

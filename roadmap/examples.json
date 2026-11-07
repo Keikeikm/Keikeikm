@@ -1,0 +1,7 @@
+[
+  { "id": "agent-workspace", "title": "Build an interactive agent workspace", "focus": "Multi-agent systems · AI Tools", "status": "completed" },
+  { "id": "cli-toolkit", "title": "Release a reusable CLI toolkit", "focus": "Developer Experience", "status": "completed" },
+  { "id": "robotics", "title": "Open-source my robotics experiments", "focus": "Embodied AI · Robotics", "status": "in-progress" },
+  { "id": "design-toolkit", "title": "Publish a creative design toolkit", "focus": "HCI · Design Engineering", "status": "planned" },
+  { "id": "learning-notes", "title": "Share my learning notes and experiments", "focus": "Learning in public · Open Knowledge", "status": "planned" }
+]

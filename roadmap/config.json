@@ -1,0 +1,10 @@
+{
+  "repository": "Keikeikm/Keikeikm",
+  "source": "github",
+  "title": "My Open Source Lab",
+  "description": "A living roadmap of things I'm building, experimenting with, and planning to open-source.",
+  "badge": "Building in public",
+  "heading": "Open Source Roadmap",
+  "label": "roadmap",
+  "inProgressLabel": "in progress"
+}

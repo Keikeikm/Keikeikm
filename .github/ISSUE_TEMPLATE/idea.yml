@@ -1,0 +1,10 @@
+name: Suggest an idea
+description: Share an idea, question, or collaboration opportunity / 提建议或参与合作
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What would you like to see or help build?
+    validations:
+      required: true

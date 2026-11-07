@@ -1,0 +1,12 @@
+{
+  "name": "open-source-lab-profile",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node scripts/build-roadmap.mjs",
+    "sync": "node scripts/sync-roadmap.mjs",
+    "test": "node --test",
+    "preview": "node scripts/preview.mjs"
+  }
+}
