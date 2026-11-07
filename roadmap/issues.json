@@ -12,5 +12,12 @@
     "focus": "refactor feishu-ava bot & plugin in a monorepo",
     "status": "planned",
     "url": "https://github.com/Keikeikm/ava-feishu-extension"
+  },
+  {
+    "id": "issue-3",
+    "title": "AI poker repo where user can play with RL model or LLM or watch AI playing",
+    "focus": "LLM management、agent、RL、data analysis and learning",
+    "status": "planned",
+    "url": "https://github.com/Keikeikm/ai-dou"
   }
 ]
