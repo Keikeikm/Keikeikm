@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "issue-1",
+    "title": "ava-mem",
+    "focus": "a 3d HCI vocabulary memory web app，which integrates AVA for data analysis，AntV G2 for data visualization，some Algorithms for computer PK with user",
+    "status": "planned",
+    "url": "https://github.com/Keikeikm/ava-mem-3d.git"
+  },
+  {
+    "id": "issue-2",
+    "title": "monorepo : feishu-ava bot & plugin",
+    "focus": "refactor feishu-ava bot & plugin in a monorepo",
+    "status": "planned",
+    "url": "https://github.com/Keikeikm/ava-feishu-extension"
+  }
+]
